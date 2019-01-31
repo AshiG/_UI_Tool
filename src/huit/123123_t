@@ -1,0 +1,57 @@
+^Type 777
+^NodeName Root
+^ParentName 
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName -1
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 400.000000 300.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Login_07.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Img_Move_0
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 400.000000 300.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Login_03.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Img_Move_1
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 800.000000 -0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale -400.000000 300.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Login_03.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick ýýýý4“ø(?1
