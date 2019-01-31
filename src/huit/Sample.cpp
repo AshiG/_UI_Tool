@@ -281,10 +281,10 @@ void Sample::InGameEvent()
 	pCrossHair->PreEvent.first = E_CROSSHAIR;
 	pCrossHair->PreEvent.second = pCrossHair;
 
-	//JPanel* pFight = (JPanel*)pRoot->find_child(L"fight_panel");
-	//if (pFight == nullptr) return;
-	//pFight->PreEvent.first = E_FIGHT;
-	//pFight->PreEvent.second = pFight;
+	JPanel* pFight = (JPanel*)pRoot->find_child(L"fight_panel");
+	if (pFight == nullptr) return;
+	pFight->PreEvent.first = E_FIGHT;
+	pFight->PreEvent.second = pFight;
 	
 	//JPanel* pTimeOver = (JPanel*)pRoot->find_child(L"TimeOver");
 	//if (pTimeOver == nullptr) return;
