@@ -54,7 +54,7 @@ namespace UI
 		{
 			m_pItem->m_pIndexList[txNORMAL] = -1;
 			m_bEmpty = true;
-			JSlotManager::Get()->DelSlot(this->m_NodeName);
+			//JSlotManager::Get()->DelSlot(this->m_NodeName);
 			return true;
 		}
 		return false;
