@@ -155,6 +155,7 @@ copy "*.h" "..\\..\\include\\core\\"</Command>
 copy "..\\..\\output\\$(ProjectName)\\$(ProjectName)_d.lib" "..\\..\\lib\\"
 copy "..\\..\\output\\$(ProjectName)\\$(ProjectName).dll" "..\\..\\lib\\"
 md "..\\..\\include\\core"
+md "..\\..\\include\\lib"
 copy "*.h" "..\\..\\include\\core\\"</Command>
     </PostBuildEvent>
     <Lib>
