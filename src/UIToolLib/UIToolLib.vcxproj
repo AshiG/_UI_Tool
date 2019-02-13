@@ -105,6 +105,7 @@
     </Link>
     <PostBuildEvent>
       <Command>md "..\\..\\include\\ui"
+md "..\\..\\lib"
 copy "*.h" "..\\..\\include\\ui"
 copy "..\\..\\output\\UIToolLib\\UIToolLib.lib" "..\\..\\lib\\UIToolLib_d.lib"</Command>
     </PostBuildEvent>
