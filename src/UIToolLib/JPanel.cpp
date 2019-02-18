@@ -2,6 +2,11 @@
 #include "ObjectManager.h"
 namespace UI
 {
+	void JPanel::SetColor(const D3DXVECTOR4 vColor)
+	{
+		if (m_pShape != nullptr)
+			m_pShape->m_cbData.vColor = vColor;
+	}
 	void JPanel::SetEventTime(const float fTime)
 	{
 		m_fEventTime = fTime;
@@ -61,6 +66,7 @@ namespace UI
 		D3DXMatrixTranslation(&m_matTrans, m_vPos.x, m_vPos.y, m_vPos.z);
 
 		m_matTrans *= matParentTrans;
+
 		m_matWorld = m_matScl * m_matRot * m_matTrans;
 
 		//m_matWorld = matParent * m_matWorld;

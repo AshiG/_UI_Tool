@@ -7,6 +7,12 @@ namespace UI
 	{
 		return new JSliderCtrl(*this);
 	}
+	void JSliderCtrl::SetColor(const D3DXVECTOR4 vColor)
+	{
+		if (m_pSliderBar->m_pShape == nullptr || m_pSliderHandle->m_pShape == nullptr) return;
+		m_pSliderBar->m_pShape->m_cbData.vColor = vColor;
+		m_pSliderHandle->m_pShape->m_cbData.vColor = vColor;
+	}
 	bool JSliderCtrl::Create(ID3D11Device* pDevice, const TCHAR* szBar, const TCHAR* szHandle, const char* PSName, const TCHAR* szShaderName)
 	{
 		if (!m_pSliderBar->Create(pDevice, PSName, szShaderName)) return false;

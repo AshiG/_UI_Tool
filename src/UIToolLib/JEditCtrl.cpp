@@ -122,6 +122,7 @@ namespace UI
 	{
 		if (!m_bRender) return false;
 		JImageCtrl::Render(pContext);
+		WriteManager::Get().SetFontColor(D2D1::ColorF::Black);
 		WriteManager::Get().SetFontSizeAlign(m_fSize, m_Align, EAlign::Center);
 		if (m_bPrivate)
 		{

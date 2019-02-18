@@ -567,6 +567,10 @@ namespace UI
 					&pProg->m_pFrontGround->m_vScl.y, 
 					&pProg->m_pFrontGround->m_vScl.z);
 			}
+			if ((iLine = FindToken("bDecrease")) > 0)
+			{
+				sscanf(m_pTokenList[iLine].c_str(), "%s %d", temp0.c_str(), &pProg->m_bDecrease);
+			}
 			if ((iLine = FindToken("Color")) > 0)
 			{
 				sscanf(m_pTokenList[iLine].c_str(), "%s %f %f %f %f", temp0.c_str(),

@@ -118,6 +118,7 @@ namespace UI
 			fCurValue += fDivisionValue;
 		}
 		// Áß¾Ó ¼¼ÆÃ
+		WriteManager::Get().SetFontColor(D2D1::ColorF::Black);
 		WriteManager::Get().SetFontSizeAlign(m_fSize, m_Align, EAlign::Center);
 		for (int iCol = 0; iCol < m_iCols; iCol++)
 		{

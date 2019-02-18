@@ -17,7 +17,6 @@ struct UISort
 		return FALSE;
 	}
 };
-
 // ime msgevent
 void Sample::MsgEvent(const MSG& _message) noexcept
 {
@@ -254,7 +253,7 @@ void Sample::InGameEvent()
 	JSliderCtrl* pChatSlider = (JSliderCtrl*)pRoot->find_child(L"Chat_Slider");
 	JListCtrl* pList = (JListCtrl*)pRoot->find_child(L"Chat_Log");
 	pList->m_fValue = &pChatSlider->m_fValue;
-	
+
 	// effect
 	JPanel* pEff1 = (JPanel*)pRoot->find_child(L"fadeout");
 	if (pEff1 == nullptr) return;
@@ -265,6 +264,11 @@ void Sample::InGameEvent()
 	if (pEff3 == nullptr) return;
 	pEff3->PreEvent.first = E_FADEOUT;
 	pEff3->PreEvent.second = pEff3;
+
+	JPanel* pEff4 = (JPanel*)pRoot->find_child(L"fadeout_green");
+	if (pEff4 == nullptr) return;
+	pEff4->PreEvent.first = E_FADEOUT;
+	pEff4->PreEvent.second = pEff4;
 
 	JPanel* pEff2 = (JPanel*)pRoot->find_child(L"fadein");
 	if (pEff2 == nullptr) return;
@@ -285,7 +289,7 @@ void Sample::InGameEvent()
 	if (pFight == nullptr) return;
 	pFight->PreEvent.first = E_FIGHT;
 	pFight->PreEvent.second = pFight;
-	
+
 	//JPanel* pTimeOver = (JPanel*)pRoot->find_child(L"TimeOver");
 	//if (pTimeOver == nullptr) return;
 	//pTimeOver->PreEvent.first = E_FADEINOUT;
@@ -306,7 +310,7 @@ void Sample::InGameEvent()
 	//pEndingEffect->PreEvent.first = E_ENDING_EFFECT;
 	//pEndingEffect->PreEvent.second = pEndingEffect;
 
-	JPanel* pInventoryPanel = (JPanel*)pRoot->find_child(L"Inventory_Panel");
+	static JPanel* pInventoryPanel = (JPanel*)pRoot->find_child(L"Inventory_Panel");
 	if (pInventoryPanel == nullptr) return;
 	pInventoryPanel->PreEvent.first = E_KEY_REVERSESHOW;
 	pInventoryPanel->PreEvent.second = pInventoryPanel;
@@ -326,16 +330,47 @@ void Sample::InGameEvent()
 	if (pInventoryAdd == nullptr) return;
 	pInventoryAdd->EventClick.first = E_INVENTORY_ADD;
 	pInventoryAdd->EventClick.second = pInventorySlot;
-
-	JPanel* pInventoryDel = (JPanel*)pInventoryPanel->find_child(L"Inventory_Del");
-	if (pInventoryDel == nullptr) return;
-	pInventoryDel->EventClick.first = E_INVENTORY_DEL;
-	pInventoryDel->EventClick.second = pInventorySlot;
+	
+	//JPanel* pInventoryDel = (JPanel*)pInventoryPanel->find_child(L"Inventory_Del");
+	//if (pInventoryDel == nullptr) return;
+	//pInventoryDel->EventClick.first = E_INVENTORY_DEL;
+	//pInventoryDel->EventClick.second = pInventorySlot;
 
 	JPanel* pInfoPanel = (JPanel*)pRoot->find_child(L"Info_Panel");
 	if (pInfoPanel == nullptr) return;
 	pInfoPanel->PreEvent.first = E_KEY_REVERSESHOW;
-	pInfoPanel->PreEvent.second = pInfoPanel;	
+	pInfoPanel->PreEvent.second = pInfoPanel;
+
+	static JPanel* pItemHelp = (JPanel*)pRoot->find_child(L"Item_Info_Panel");
+	static JPanel* pItemHelpBack = (JPanel*)pRoot->find_child(L"Item_Info_Back");
+	if (pItemHelp == nullptr) return;
+	if (pItemHelpBack == nullptr) return;
+	static JPanel* Weapon = (JPanel*)pRoot->find_child(L"Inventory_Weapon_Back");
+	static JPanel* Armor = (JPanel*)pRoot->find_child(L"Inventory_Armor_Back");
+	static JPanel* Accessoris = (JPanel*)pRoot->find_child(L"Inventory_Accessories_Back");
+	static JPanel* Accessoris2 = (JPanel*)pRoot->find_child(L"Inventory_Accessories2_Back");
+	if (Weapon == nullptr) return;
+	if (Armor == nullptr) return;
+	if (Accessoris == nullptr) return;
+	if (Accessoris2 == nullptr) return;
+
+	static auto E_SHOW_ITEM_INFO = [](void* vp)
+	{
+		pItemHelp->m_bRender = false;
+		if (!pInventoryPanel->m_bRender) return;
+
+		if (Weapon->m_pShape->Hovered(Weapon->m_rt, Weapon->m_ptMouse.Getpt()) ||
+			Armor->m_pShape->Hovered(Armor->m_rt, Armor->m_ptMouse.Getpt()) ||
+			Accessoris->m_pShape->Hovered(Accessoris->m_rt, Accessoris->m_ptMouse.Getpt()) ||
+			Accessoris2->m_pShape->Hovered(Accessoris2->m_rt, Accessoris2->m_ptMouse.Getpt()))
+		{
+			pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+			pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+			pItemHelp->m_bRender = true;
+		}
+	};
+	pItemHelp->PreEvent.first = E_SHOW_ITEM_INFO;
+	pItemHelp->PreEvent.second = pItemHelp;
 }
 void Sample::EventCircuit(JPanel* pPanel, bool bValue)
 {
@@ -1361,8 +1396,9 @@ void Sample::UpdateInfo()
 		InfoForm::Get()->SetDlgItemTextW(Info_txNORMAL, I_TexMgr.GetPtr(pProgress->m_pBackGround->m_pIndexList[UI::txNORMAL])->m_szName.data());
 		InfoForm::Get()->SetDlgItemTextW(Info_txHOVER, I_TexMgr.GetPtr(pProgress->m_pFrontGround->m_pIndexList[UI::txNORMAL])->m_szName.data());
 		InfoForm::Get()->SetDlgItemTextW(Info_txPRESS, L"");
-		InfoForm::Get()->SetDlgItemTextW(Info_Value, std::to_wstring(pProgress->m_fValue).data());
+		InfoForm::Get()->SetDlgItemTextW(Info_Value, std::to_wstring(pProgress->m_fCurValue).data());
 		InfoForm::Get()->m_VHType.SetCurSel(InfoForm::Get()->m_VHType.FindString(0, FindVHType(pProgress->m_VHType).data()));
+		InfoForm::Get()->m_Decrease.SetCheck(pProgress->m_bDecrease);
 		//InfoForm::Get()->SetDlgItemTextW(IDC_VHType, FindVHType(pProgress->m_VHType).data());
 
 		InfoForm::Get()->SetDlgItemTextW(ColorX, std::to_wstring(pProgress->m_pBackGround->m_pShape->m_cbData.vColor.x).data());
@@ -1991,6 +2027,9 @@ bool Sample::Init()		noexcept
 	CWnd* PassWord = (CWnd*)InfoForm::Get()->GetDlgItem(IDC_PassWord);
 	InfoForm::Get()->m_PassWord.m_hWnd = PassWord->m_hWnd;
 	SetKeyDownHold();
+	////
+	CWnd* Decrease = (CWnd*)InfoForm::Get()->GetDlgItem(IDC_Decrease);
+	InfoForm::Get()->m_Decrease.m_hWnd = Decrease->m_hWnd;
 	////
 	CWnd* infoAlign = (CWnd*)InfoForm::Get()->GetDlgItem(Info_Align);
 	InfoForm::Get()->m_Align.m_hWnd = infoAlign->m_hWnd;
