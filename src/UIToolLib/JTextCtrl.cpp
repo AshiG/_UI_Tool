@@ -44,11 +44,6 @@ namespace UI
 		m_rtText.y = (-vPos.y - m_vScl.y + (m_fHeight / 2.0f)) * height;
 		m_rtText.z = (vPos.x + m_vScl.x + (m_fWidth / 2.0f)) * width;
 		m_rtText.w = (-vPos.y + m_vScl.y + (m_fHeight / 2.0f)) * height;
-
-		m_rtBackText.x = m_rtText.x + 2;
-		m_rtBackText.y = m_rtText.y + 2;
-		m_rtBackText.z = m_rtText.z + 2;
-		m_rtBackText.w = m_rtText.w + 2;
 	}
 	bool JTextCtrl::Frame(const float& spf, const float& accTime) noexcept
 	{
@@ -67,9 +62,9 @@ namespace UI
 		JButtonCtrl::Render(pContext);
 		WriteManager::Get().SetFontColor(D2D1::ColorF::Black);
 		WriteManager::Get().SetFontSizeAlign(m_fSize, m_Align, EAlign::Center);
-		WriteManager::Get().Draw(m_rtBackText, m_Text);
+		WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x - 1, m_rtText.y - 1, m_rtText.z - 1, m_rtText.w - 1), m_Text);
+		WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x + 1, m_rtText.y + 1, m_rtText.z + 1, m_rtText.w + 1), m_Text);
 		WriteManager::Get().SetFontColor(D2D1::ColorF::White);
-		WriteManager::Get().SetFontSizeAlign(m_fSize, m_Align, EAlign::Center);
 		WriteManager::Get().Draw(m_rtText, m_Text);
 		return true;
 	}
