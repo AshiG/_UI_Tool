@@ -14,6 +14,7 @@ namespace UI
 
 		m_Text = Text;
 		m_fSize = TextSize;
+		m_bOutline = true;
 		return true;
 	}
 	wstring JTextCtrl::GetString()
@@ -60,11 +61,16 @@ namespace UI
 	{
 		if (!m_bRender) return false;
 		JButtonCtrl::Render(pContext);
-		WriteManager::Get().SetFontColor(D2D1::ColorF::Black);
 		WriteManager::Get().SetFontSizeAlign(m_fSize, m_Align, EAlign::Center);
-		WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x - 1, m_rtText.y - 1, m_rtText.z - 1, m_rtText.w - 1), m_Text);
-		WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x + 1, m_rtText.y + 1, m_rtText.z + 1, m_rtText.w + 1), m_Text);
-		WriteManager::Get().SetFontColor(D2D1::ColorF::White);
+		if (m_bOutline)
+		{
+			WriteManager::Get().SetFontColor(D2D1::ColorF::White);
+			WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x - 1, m_rtText.y, m_rtText.z - 1, m_rtText.w), m_Text);
+			WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x + 1, m_rtText.y, m_rtText.z + 1, m_rtText.w), m_Text);
+			WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x, m_rtText.y - 1, m_rtText.z, m_rtText.w - 1), m_Text);
+			WriteManager::Get().Draw(D3DXVECTOR4(m_rtText.x, m_rtText.y + 1, m_rtText.z, m_rtText.w + 1), m_Text);
+		}
+		WriteManager::Get().SetFontColor(D2D1::ColorF::Black);
 		WriteManager::Get().Draw(m_rtText, m_Text);
 		return true;
 	}
