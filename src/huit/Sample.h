@@ -104,6 +104,7 @@ public:
 	void IntroEvent();
 	void LobbyEvent();
 	void InGameEvent();
+	void LoadingEvent();
 	void MsgEvent(const MSG& _message) noexcept;
 	virtual bool Init()		noexcept override;
 	virtual bool Frame()	noexcept override;

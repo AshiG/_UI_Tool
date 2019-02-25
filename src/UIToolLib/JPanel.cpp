@@ -2,6 +2,45 @@
 #include "ObjectManager.h"
 namespace UI
 {
+	void JPanel::UpdateButtonState()
+	{
+		if (m_pShape == nullptr) return;
+
+		m_bHovered = m_pShape->Hovered(m_rt, m_ptMouse.Getpt());
+		m_bPressed = m_pShape->Pressed(m_rt, m_ptMouse.Getpt());
+		m_bClicked = m_pShape->Clicked(m_rt, m_ptMouse.Getpt());
+
+		if (CheckHovered())
+		{
+			if (EventHover.first != nullptr && m_bEvent)
+				EventHover.first(EventHover.second);
+		}
+		if (CheckPressed() || Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
+		{
+			if (EventPress.first != nullptr && m_bEvent)
+				EventPress.first(EventPress.second);
+		}
+		if (CheckClicked() || Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
+		{
+			if (EventClick.first != nullptr && m_bEvent)
+				EventClick.first(EventClick.second);
+		}
+	}
+	bool JPanel::CheckHovered()
+	{
+		if (m_pShape == nullptr) return false;
+		return m_bHovered;
+	}
+	bool JPanel::CheckPressed()
+	{
+		if (m_pShape == nullptr) return false;
+		return m_bPressed;
+	}
+	bool JPanel::CheckClicked()
+	{
+		if (m_pShape == nullptr) return false;
+		return m_bClicked;
+	}
 	void JPanel::SetColor(const D3DXVECTOR4 vColor)
 	{
 		if (m_pShape != nullptr)
@@ -136,6 +175,9 @@ namespace UI
 	bool JPanel::PostFrame(const float& spf, const float& accTime)
 	{
 		if (!m_bRender) return false;
+
+		UpdateButtonState();
+
 		if (PostEvent.first != nullptr && m_bEvent)
 			PostEvent.first(PostEvent.second);
 

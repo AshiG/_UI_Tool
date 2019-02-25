@@ -1,0 +1,585 @@
+^Type 777
+^NodeName Root
+^ParentName 
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName BackGround
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 400.000000 300.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal thumb-1920-237466.jpg
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Chk_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -150.000000 75.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Check
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName ProgressBar_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 75.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 60.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText ProgressBar
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Slider_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 150.000000 75.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Slider
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Sprite_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 300.000000 75.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Sprite
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Text_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -300.000000 -225.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Text
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Particle_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -150.000000 -225.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Particle
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName List_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 -225.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText List
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Edit_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 150.000000 -225.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Edit
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Image_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 300.000000 -225.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Image
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Btn_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -300.000000 75.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText Button
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 778
+^NodeName Button
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -298.000000 148.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Btn2_Hover.png
+^tx_Hover Btn2_Normal.png
+^tx_Press Btn2_Press.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 778
+^NodeName Button2
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -298.000000 203.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal blue_button00.png
+^tx_Hover blue_button01.png
+^tx_Press blue_button02.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 778
+^NodeName Button3
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -298.000000 255.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal btn_177.png
+^tx_Hover btn_176.png
+^tx_Press btn_176.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 779
+^NodeName Check
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -150.000000 138.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 25.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Disable grey_box.png
+^tx_Enable grey_boxCheckmark.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 779
+^NodeName Check2
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -144.000000 206.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 30.000000 30.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Disable common_btn_check_unselected.png
+^tx_Enable common_btn_check_selected.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 780
+^VHType 1447
+^NodeName ProgressBar
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 3.000000 120.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 10.000000 1.000000
+^SubScale 49.000000 9.000000 1.000000
+^bDecrease 1
+^Color 1.000000 0.000000 0.000000 1.000000
+^tx_BackGround black.png
+^tx_FrontGround White.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 780
+^VHType 1446
+^NodeName ProgressBar2
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -37.000000 188.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 10.000000 50.000000 1.000000
+^SubScale 9.000000 49.000000 1.000000
+^bDecrease 1
+^Color 0.000000 0.000000 1.000000 1.000000
+^tx_BackGround black.png
+^tx_FrontGround White.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 781
+
+^VHType 1447
+^NodeName Slider
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 152.000000 125.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 3.000000 1.000000
+^SubScale 15.000000 15.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Bar µÕ±Ù°ÅÁÂ¿ì±æÂß2.png
+^tx_Handle star_1-792ed97534d5eed4092159fc3befacc0-1.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 781
+
+^VHType 1446
+^NodeName Slider2
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 103.000000 214.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 50.000000 1.000000
+^SubScale 15.000000 15.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Bar White.png
+^tx_Handle star_1-792ed97534d5eed4092159fc3befacc0-1.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 782
+
+^SpriteType 6429
+^NodeName Sprite
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^bLoop 1
+^Position 302.000000 137.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 30.000000 30.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^AnimTime 1.000000
+^AnimUV 0 0 
+^SPRITESTART 4 
+^font1.png
+^font2.png
+^font3.png
+^font4.png
+^SPRITEEND
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -297.000000 -166.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText GameStart
+^TextSize 18.000000
+^tx_Normal blue_button00.png
+^tx_Hover blue_button01.png
+^tx_Press blue_button02.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 784
+
+^SpriteType 6429
+^NodeName Particle
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^bLoop 1
+^Position -151.000000 -117.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^AnimTime 1.000000
+^AnimUV 0 0 
+^ParticleSize 128
+^ParticleScale 1.000000 10.000000
+^MinStartPos 0.000000 0.000000 -1.000000
+^MaxStartPos 0.000000 0.000000 -1.000000
+^TurnDir 0 0 0
+^MinColor 0.000000 0.000000 0.000000 1.000000
+^MaxColor 1.000000 1.000000 1.000000 1.000000
+^LifeTime 0.150000 0.150000
+^MinDir -1.000000 -1.000000 0.000000
+^MaxDir 1.000000 1.000000 0.000000
+^MinDirAngle 0.000000 0.000000 -1.000000 1.000000
+^MaxDirAngle 0.000000 0.000000 1.000000 1.000000
+^MoveSpeed 150.000000 200.000000
+^RotSpeed 5.000000 10.000000
+^SPRITESTART 1
+^NO_IMAGE.png
+^SPRITEEND
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 785
+^NodeName List
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 1.000000 -124.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 1
+^TextSize 15.000000
+^RectColumn 6
+^tx_Normal Ronnan-login-box12.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 787
+^NodeName Edit
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^bPrivate 0
+^Position 150.000000 -140.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 90.000000 10.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 1
+^TextSize 15.000000
+^TextLength 0
+^tx_Normal ChatEdit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 787
+^NodeName Edit2
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^bPrivate 0
+^Position 150.000000 -167.300491 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 90.000000 10.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 1
+^TextSize 15.000000
+^TextLength 0
+^tx_Normal ChatEdit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Image
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 300.000000 -124.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal 776def7adf341765f15df4cd59d60de733c91e22_full.jpg
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 

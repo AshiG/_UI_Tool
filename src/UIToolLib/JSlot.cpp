@@ -158,8 +158,8 @@ namespace UI
 				}
 			}
 			m_pBack->m_vScl = this->m_vScl;
-			m_pItem->m_vScl.x = m_pBack->m_vScl.x - 1.0f;
-			m_pItem->m_vScl.y = m_pBack->m_vScl.y - 1.0f;
+			m_pItem->m_vScl.x = m_pBack->m_vScl.x - 3.0f;
+			m_pItem->m_vScl.y = m_pBack->m_vScl.y - 3.0f;
 			m_pItem->m_vRot = m_pBack->m_vRot = this->m_vRot;
 		}
 		else
@@ -167,8 +167,8 @@ namespace UI
 			m_pItem->m_bRender = false;
 			m_pItem->m_vPos = m_pBack->m_vPos = this->m_vPos;
 			m_pBack->m_vScl = this->m_vScl;
-			m_pItem->m_vScl.x = m_pBack->m_vScl.x - 1.0f;
-			m_pItem->m_vScl.y = m_pBack->m_vScl.y - 1.0f;
+			m_pItem->m_vScl.x = m_pBack->m_vScl.x - 3.0f;
+			m_pItem->m_vScl.y = m_pBack->m_vScl.y - 3.0f;
 			m_pItem->m_vRot = m_pBack->m_vRot = this->m_vRot;
 		}
 		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))

@@ -1,0 +1,139 @@
+^Type 777
+^NodeName Root
+^ParentName 
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName BackGround
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -0.000000 -0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 400.000000 300.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal thumb-1920-237466.jpg
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName EventText
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 1.000000 -209.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 75.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText 이벤트실행버튼
+^TextSize 25.000000
+^tx_Normal btn_177.png
+^tx_Hover btn_176.png
+^tx_Press btn_176.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7277
+^vpEventClick Event_Panel
+
+^Type 777
+^NodeName Event_Panel
+^ParentName Root
+^KeyState 135 135
+^bRender 0
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName Event_BackGround
+^ParentName Event_Panel
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 60.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 200.000000 200.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Ronnan-login-box12.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 790
+^NodeName Event_Inventory
+^ParentName Event_Panel
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 9.073116 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 190.000000 140.000000 1.000000
+^RowCol 7 6 
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal black.png
+^tx_Hover black_wdim10.png
+
+^Type 783
+^NodeName Event_Title
+^ParentName Event_Panel
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 250.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 100.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText 인벤토리
+^TextSize 35.000000
+^tx_Normal Edit.png
+^tx_Hover Edit.png
+^tx_Press Edit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Slot_Text
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -317.000000 -231.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 0.500000 0.500000 0.500000 1.000000
+^Align 0
+^strText QuickSlot
+^TextSize 25.000000
+^tx_Normal backimg_000.png
+^tx_Hover backimg_000.png
+^tx_Press backimg_000.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 789
+^NodeName QuickSlot
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position -315.000000 -171.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 25.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal black_wdim10.png

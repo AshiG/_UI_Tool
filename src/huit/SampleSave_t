@@ -1,0 +1,533 @@
+^Type 777
+^NodeName Root
+^ParentName 
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 777
+^NodeName GamePanel
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 780
+^VHType 1446
+^NodeName Game_MP
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position 313.666687 -232.000061 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^SubScale 50.000000 50.000000 1.000000
+^bDecrease 1
+^Color 0.000000 0.000000 1.000000 1.000000
+^tx_BackGround black.png
+^tx_FrontGround White.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 780
+^VHType 1446
+^NodeName Game_HP
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position -315.000000 -233.120560 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^SubScale 50.000000 50.000000 1.000000
+^bDecrease 1
+^Color 1.000000 0.000000 0.000000 1.000000
+^tx_BackGround black.png
+^tx_FrontGround White.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Game_RightImg
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position 180.000000 -230.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 220.000000 70.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal AngerBG-a29fe88540a9de447a36082397fc4248-1.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Game_LeftImg
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position -180.000000 -230.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale -220.000000 70.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal AngerBG-a29fe88540a9de447a36082397fc4248-1.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 780
+^VHType 1446
+^NodeName Game_RightSkill
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position 367.166626 -258.050751 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 27.025963 28.013781 1.000000
+^SubScale 27.025963 28.013781 1.000000
+^bDecrease 1
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_BackGround axe_mobile-d4d9e8a208f1f964783b426340fc8c29-1.png
+^tx_FrontGround black.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 780
+^VHType 1446
+^NodeName Game_LeftSkill
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position -367.166687 -258.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 27.025963 28.013781 1.000000
+^SubScale 27.025963 28.013781 1.000000
+^bDecrease 1
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_BackGround boots_mobile-5301437f3fd3acb46bc8924e850b75cf-1.png
+^tx_FrontGround black.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Game_SettingImg
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position -368.000000 268.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 25.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal settings-cogwheel-button_icon-icons.com_72559.png
+^pfEventHover 7278
+^vpEventHover Game_SettingImg
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7277
+^vpEventClick SettingPanel
+
+^Type 783
+^NodeName Game_MoneyText
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position 1.000000 269.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 50.000000 1.000000
+^Color 1.000000 1.000000 1.000000 0.000000
+^Align 0
+^strText 100,000,000
+^TextSize 25.000000
+^tx_Normal NO_IMAGE.png
+^tx_Hover NO_IMAGE.png
+^tx_Press NO_IMAGE.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 778
+^NodeName Game_Inventory_Btn
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^Position 348.000000 277.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal btn_177.png
+^tx_Hover btn_176.png
+^tx_Press btn_176.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7277
+^vpEventClick InventoryPanel
+
+^Type 782
+
+^SpriteType 6430
+^NodeName Game_Sprite_0
+^ParentName GamePanel
+^KeyState 135 135
+^bRender 1
+^bLoop 1
+^Position -70.000000 268.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 15.000000 15.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^AnimTime 0.500000
+^AnimUV 4 2 
+^SPRITESTART 1 
+^02Sprite_Gold-97c22b9c49552ae499f748b5fb535d0d-1.png
+^SPRITEEND
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 777
+^NodeName ChattingPanel
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 785
+^NodeName Chatting_List
+^ParentName ChattingPanel
+^KeyState 135 135
+^bRender 1
+^Position 0.166673 -270.333313 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 221.001495 26.333374 1.000000
+^Color 0.700000 0.700000 0.700000 1.000000
+^Align 1
+^TextSize 15.000000
+^RectColumn 4
+^tx_Normal White.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 781
+
+^VHType 1446
+^NodeName Chatting_Slider
+^ParentName ChattingPanel
+^KeyState 135 135
+^bRender 1
+^Position 219.000000 -268.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 2.154060 23.621307 1.000000
+^SubScale 7.000000 7.000000 1.000000
+^Color 0.900000 0.700000 1.000000 1.000000
+^tx_Bar Alpha.png
+^tx_Handle circle.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 787
+^NodeName Chatting_Edit
+^ParentName ChattingPanel
+^KeyState 135 135
+^bRender 0
+^bPrivate 0
+^Position 0.000000 -207.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 207.665771 10.166670 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 1
+^TextSize 15.000000
+^TextLength 0
+^tx_Normal ChatEdit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 777
+^NodeName InventoryPanel
+^ParentName Root
+^KeyState 135 135
+^bRender 0
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName Inventory_BackGround
+^ParentName InventoryPanel
+^KeyState 135 135
+^bRender 1
+^Position 200.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 150.000000 200.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal Ronnan-login-box12.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Inventory_Title
+^ParentName InventoryPanel
+^KeyState 135 135
+^bRender 1
+^Position 200.000000 200.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 100.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText ÀÎº¥Åä¸®
+^TextSize 25.000000
+^tx_Normal Edit.png
+^tx_Hover Edit.png
+^tx_Press Edit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 790
+^NodeName Inventory_Slot
+^ParentName InventoryPanel
+^KeyState 135 135
+^bRender 1
+^Position 200.000000 -58.570412 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 140.000000 100.000000 1.000000
+^RowCol 7 6 
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal back345345.png
+^tx_Hover black_wdim10.png
+
+^Type 789
+^NodeName Inventory_WeaponSlot
+^ParentName InventoryPanel
+^KeyState 135 135
+^bRender 1
+^Position 304.000000 106.038132 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 25.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal black_wdim10.png
+
+^Type 789
+^NodeName Inventory_ArmorSlot
+^ParentName InventoryPanel
+^KeyState 135 135
+^bRender 1
+^Position 105.000000 107.182358 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 25.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal black_wdim10.png
+
+^Type 777
+^NodeName SettingPanel
+^ParentName Root
+^KeyState 135 135
+^bRender 0
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 1.000000 1.000000 1.000000
+
+^Type 788
+^NodeName Setting_BackGround
+^ParentName SettingPanel
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 180.000000 150.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Normal panel2.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Setting_Title
+^ParentName SettingPanel
+^KeyState 135 135
+^bRender 1
+^Position 0.000000 131.357330 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 100.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText ¼³Á¤
+^TextSize 30.000000
+^tx_Normal Edit.png
+^tx_Hover Edit.png
+^tx_Press Edit.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Setting_Exit
+^ParentName SettingPanel
+^KeyState 135 135
+^bRender 1
+^Position 115.871460 -95.039490 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 50.000000 25.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^Align 0
+^strText Á¾·á
+^TextSize 25.000000
+^tx_Normal Btn1Press.png
+^tx_Hover Btn1Hover.png
+^tx_Press btn1Normal.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 788
+^NodeName Setting_LowMode_BackGround
+^ParentName SettingPanel
+^KeyState 135 135
+^bRender 1
+^Position -45.070644 85.692513 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 100.000000 15.000000 1.000000
+^Color 0.000000 0.000000 0.000000 1.000000
+^tx_Normal µÕ±Ù°ÅÁÂ¿ì±æÂß2.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 783
+^NodeName Setting_LowModeText
+^ParentName Setting_LowMode_BackGround
+^KeyState 135 135
+^bRender 1
+^Position -2.000000 2.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 100.000000 15.000000 1.000000
+^Color 1.000000 0.700000 1.000000 1.000000
+^Align 0
+^strText Àú»ç¾ç¸ðµå
+^TextSize 20.000000
+^tx_Normal µÕ±Ù°ÅÁÂ¿ì±æÂß2.png
+^tx_Hover µÕ±Ù°ÅÁÂ¿ì±æÂß2.png
+^tx_Press µÕ±Ù°ÅÁÂ¿ì±æÂß2.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 779
+^NodeName Setting_LowMode_Check
+^ParentName SettingPanel
+^KeyState 135 135
+^bRender 1
+^Position 148.000000 89.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 20.000000 20.000000 1.000000
+^Color 1.000000 1.000000 1.000000 1.000000
+^tx_Disable common_btn_check_unselected.png
+^tx_Enable common_btn_check_selected.png
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick 
+
+^Type 784
+
+^SpriteType 6429
+^NodeName LoveParticle
+^ParentName Root
+^KeyState 135 135
+^bRender 1
+^bLoop 1
+^Position 0.000000 0.000000 0.000000
+^Rotate 0.000000 0.000000 0.000000
+^Scale 0.000000 0.000000 1.000000
+^AnimTime 1.000000
+^AnimUV 0 0 
+^ParticleSize 64
+^ParticleScale 5.000000 10.000000
+^MinStartPos -400.000000 300.000000 -1.000000
+^MaxStartPos 400.000000 300.000000 -1.000000
+^TurnDir 1 0 0
+^MinColor 1.000000 1.000000 1.000000 1.000000
+^MaxColor 1.000000 1.000000 1.000000 1.000000
+^LifeTime 10.000000 10.000000
+^MinDir -1.000000 -1.000000 0.000000
+^MaxDir 1.000000 -1.000000 0.000000
+^MinDirAngle 0.000000 0.000000 -1.000000 1.000000
+^MaxDirAngle 0.000000 0.000000 1.000000 1.000000
+^MoveSpeed 80.000000 100.000000
+^RotSpeed 5.000000 10.000000
+^SPRITESTART 1
+^PropertyButtonFavouriteFilled-f49031973d301466f8844bd153a56efc-1.png
+^SPRITEEND
+^pfEventHover 7274
+^vpEventHover 
+^pfEventPress 7274
+^vpEventPress 
+^pfEventClick 7274
+^vpEventClick ýýýý

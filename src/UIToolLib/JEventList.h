@@ -9,7 +9,7 @@
 	:: Tool InfoEventInit() -> ComboBox String 추가
 	:: Tool Load(JParser)   -> EventBind
 	:: Tool Sample() 	EVENT_LIST FindPointerFunc(wstring Event); -> Tool 내에서 Event 변환 DWORD <-> wstring
-						wstring FindPointerFunc(EVENT_LIST Event); -> Tool 내에서 Event 변환 DWORD <-> wstring
+						wstring FindPointerFunc(EVENT_LIST Event); -> Tool 내에서 Event 변환 wstring <-> DWORD
 */
 namespace UI
 {
@@ -639,12 +639,12 @@ namespace UI
 			if (pPanel->m_bRender)
 			{
 				pMouse->m_bRender = true;
-				Input::isDebug = false;
+				//Input::isDebug = false;
 			}
 			else
 			{
 				pMouse->m_bRender = false;
-				Input::isDebug = true;
+				//Input::isDebug = true;
 			}
 		}
 	}

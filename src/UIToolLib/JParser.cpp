@@ -2,6 +2,7 @@
 #include "JSlotManager.h"
 #include "JItem.h"
 #include "DxManager.h"
+
 namespace UI
 {
 	bool JParser::FileLoad(ID3D11Device* pDevice, const TCHAR* szFileName, JPanel& pRoot, wstring plusPath)

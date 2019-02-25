@@ -1,7 +1,46 @@
 #pragma once
 #include "uiheader.h"
+#include "LoadingParameter.h"
+#include <Thread>
+
 namespace UI
 {
+	static bool Loading(const JPanel* pRoot)
+	{
+		if (pRoot == nullptr) return false;
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Name)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Parent)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Transform)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Type)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Texture)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+		LoadClass::LoadingCount += 1;
+		LoadClass::LoadingString = pRoot->m_NodeName + L"(Event)";
+		this_thread::sleep_for(std::chrono::milliseconds(5));
+
+
+		for (auto iC = pRoot->m_pChildList.begin(); iC != pRoot->m_pChildList.end(); iC++)
+		{
+			Loading(*iC);
+		}
+
+		return true;
+	}
 	static void IntroEvent(JPanel* pRoot)
 	{			   
 		JPanel* pMouseCursor = pRoot->find_child(L"mouse_cursor");
@@ -108,7 +147,7 @@ namespace UI
 
 		JSliderCtrl* pChatSlider = (JSliderCtrl*)pRoot->find_child(L"Chat_Slider");
 		JListCtrl* pList = (JListCtrl*)pRoot->find_child(L"Chat_Log");
-		pList->m_fValue = &pChatSlider->m_fValue;
+		pList->m_fValue = pChatSlider->m_fValue;
 
 		// effect
 		JPanel* pEff1 = (JPanel*)pRoot->find_child(L"fadeout");
@@ -170,17 +209,42 @@ namespace UI
 		static JPanel* Armor = (JPanel*)pRoot->find_child(L"Inventory_Armor_Back");
 		static JPanel* Accessoris = (JPanel*)pRoot->find_child(L"Inventory_Accessories_Back");
 		static JPanel* Accessoris2 = (JPanel*)pRoot->find_child(L"Inventory_Accessories2_Back");
+		static JTextCtrl* ItemInfoName = (JTextCtrl*)pRoot->find_child(L"Item_Info_Name");
+		static JTextCtrl* ItemInfoKind = (JTextCtrl*)pRoot->find_child(L"Item_Info_Kind");
 
 		static auto E_SHOW_ITEM_INFO = [](void* vp)
 		{
 			pItemHelp->m_bRender = false;
 			if (!pInventoryPanel->m_bRender) return;
 
-			if (Weapon->m_pShape->Hovered(Weapon->m_rt, Weapon->m_ptMouse.Getpt()) ||
-				Armor->m_pShape->Hovered(Armor->m_rt, Armor->m_ptMouse.Getpt()) ||
-				Accessoris->m_pShape->Hovered(Accessoris->m_rt, Accessoris->m_ptMouse.Getpt()) ||
-				Accessoris2->m_pShape->Hovered(Accessoris2->m_rt, Accessoris2->m_ptMouse.Getpt()))
+			if (Weapon->CheckHovered())
 			{
+				ItemInfoName->SetString(L"초보자의 검");
+				ItemInfoKind->SetString(L"무기");
+				pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+				pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+				pItemHelp->m_bRender = true;
+			}
+			if (Armor->CheckHovered())
+			{
+				ItemInfoName->SetString(L"초보자의 갑옷");
+				ItemInfoKind->SetString(L"방어구");
+				pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+				pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+				pItemHelp->m_bRender = true;
+			}
+			if (Accessoris->CheckHovered())
+			{
+				ItemInfoName->SetString(L"초보자의 목걸이");
+				ItemInfoKind->SetString(L"악세사리");
+				pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+				pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+				pItemHelp->m_bRender = true;
+			}
+			if (Accessoris2->CheckHovered())
+			{
+				ItemInfoName->SetString(L"초보자의 팔찌");
+				ItemInfoKind->SetString(L"악세사리");
 				pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
 				pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
 				pItemHelp->m_bRender = true;
@@ -188,5 +252,37 @@ namespace UI
 		};
 		pItemHelp->PreEvent.first = E_SHOW_ITEM_INFO;
 		pItemHelp->PreEvent.second = pItemHelp;
+
+		auto pHelpText = (JTextCtrl*)pRoot->find_child(L"HelpText");
+		pHelpText->SetString(L"금액이 부족합니다.");
+		JPanel* pHelpTextPanel = pHelpText->m_pParent;
+		static auto E_HelpText = [](void* vp)
+		{
+			JPanel* pPanel = (JPanel*)vp;
+
+			if (pPanel->m_bRender)
+				pPanel->m_fUITimer += Timer::SPF;
+
+			if (pPanel->m_fUITimer >= 3.0f)
+			{
+				pPanel->m_bRender = false;
+				pPanel->m_fUITimer = 0.0f;
+			}
+		};
+		pHelpTextPanel->PreEvent.first = E_HelpText;
+		pHelpTextPanel->PreEvent.second = pHelpTextPanel;
+	}
+	static void LoadingEvent(JPanel* pRoot)
+	{
+		static JPanel* pLoadingSprite = pRoot->find_child(L"Loading_Sprite");
+		JPanel* pLoadingProgress = pRoot->find_child(L"Loading_Progress");
+		if (pLoadingProgress == nullptr) return;
+		auto E_Loading_Sprite = [](void* vp)
+		{
+			JProgressBar* pProg = (JProgressBar*)vp;
+			pLoadingSprite->m_vPos.x = ((pProg->m_fCurValue * (pProg->m_vScl.x * 2.0f)) - pProg->m_vScl.x) + pProg->m_vPos.x;
+		};
+		pLoadingProgress->PreEvent.first = E_Loading_Sprite;
+		pLoadingProgress->PreEvent.second = pLoadingProgress;
 	}
 }

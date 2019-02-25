@@ -33,6 +33,18 @@ namespace UI
 		}
 		return false;
 	}
+	//bool JPlane::CheckHovered()
+	//{
+	//	return m_bHovered;
+	//}
+	//bool JPlane::CheckPressed()
+	//{
+	//	return m_bPressed;
+	//}
+	//bool JPlane::CheckClicked()
+	//{
+	//	return m_bClicked;
+	//}
 	void JPlane::SetMatrix(D3DXMATRIX* pWorld, D3DXMATRIX* pView, D3DXMATRIX* pProj)
 	{
 		D3DXMatrixIdentity(&m_matWorld);

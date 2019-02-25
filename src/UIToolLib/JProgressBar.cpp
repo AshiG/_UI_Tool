@@ -30,14 +30,11 @@ namespace UI
 		//
 		m_pBackGround->m_pShape->m_cbData.vColor = D3DXVECTOR4 (1.0f, 1.0f, 1.0f, 1.0f);
 		m_pFrontGround->m_pShape->m_cbData.vColor = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
-		m_pMiddleGround->m_pShape->m_cbData.vColor = D3DXVECTOR4(1.0f, 0.7f, 0.5f, 1.0f);
+		m_pMiddleGround->m_pShape->m_cbData.vColor = D3DXVECTOR4(0.75f, 0.0f, 0.0f, 0.55f);
 		//
 		m_pBackGround->m_pTexture = I_TexMgr.GetPtr(m_pBackGround->m_pIndexList[txNORMAL]);
 		m_pMiddleGround->m_pTexture = I_TexMgr.GetPtr(m_pMiddleGround->m_pIndexList[txNORMAL]);
 		m_pFrontGround->m_pTexture = I_TexMgr.GetPtr(m_pFrontGround->m_pIndexList[txNORMAL]);
-
-		m_fCur = &m_fTemp;
-		m_fDis = &m_fTemp;
 		return true;
 	}
 	void JProgressBar::CheckDis(const float& spf)
@@ -58,7 +55,7 @@ namespace UI
 			}
 		}
 	}
-	void JProgressBar::SetValue(const float& fValue, float fMaxValue, float& fDisValue)
+	void JProgressBar::SetValue(float& fValue, float fMaxValue, float& fDisValue)
 	{
 		m_fMaxValue = fMaxValue;
 		m_fCur = &fValue;
@@ -95,10 +92,11 @@ namespace UI
 	void JProgressBar::Update(const float& spf)
 	{
 		/* ============= */
+#ifdef _DEBUG
 		m_pBackGround->m_pTexture = I_TexMgr.GetPtr(m_pBackGround->m_pIndexList[txNORMAL]);
 		m_pMiddleGround->m_pTexture = I_TexMgr.GetPtr(m_pMiddleGround->m_pIndexList[txNORMAL]);
 		m_pFrontGround->m_pTexture = I_TexMgr.GetPtr(m_pFrontGround->m_pIndexList[txNORMAL]);
-
+#endif
 		m_fCurValue = (*m_fCur) / m_fMaxValue;
 		UpdateTexture(m_pFrontGround, m_fCurValue);
 		if (m_bDecrease)

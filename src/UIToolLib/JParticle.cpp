@@ -84,7 +84,7 @@ namespace UI
 	}
 	void JParticle::SetDirection(const D3DXVECTOR3 vMin, const D3DXVECTOR3 vMax)
 	{
-		vDir = JDxHelper::vRand(vMin, vMax);
+		vDir = JDxHelper::vRand(vMin , vMax);
 		D3DXVec3Normalize(&vDir, &vDir);
 	}
 	void JParticle::SetDirectionAngle(const D3DXQUATERNION qMin, const D3DXQUATERNION qMax)

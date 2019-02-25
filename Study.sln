@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIToolLib", "src\UIToolLib\UIToolLib.vcxproj", "{167CF90B-8D88-49A2-BA93-25DAED802832}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D961CB9F-97FD-4041-8523-0F75B1343CB0} = {D961CB9F-97FD-4041-8523-0F75B1343CB0}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "huit", "src\huit\huit.vcxproj", "{42254FA6-69FE-4F76-B9BC-E4DF570BE683}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -52,7 +49,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {FF386A23-A0AA-42E7-9609-178D3FB9C0A3}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal

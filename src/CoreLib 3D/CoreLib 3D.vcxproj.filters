@@ -118,6 +118,12 @@
     <ClCompile Include="CEventTimer.cpp">
       <Filter>Component\Basic</Filter>
     </ClCompile>
+    <ClCompile Include="HeightMap.cpp">
+      <Filter>Component\Renderer\Child</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingParameter.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreDX.h">
@@ -252,6 +258,12 @@
     <ClInclude Include="CEventTimer.h">
       <Filter>Component\Basic</Filter>
     </ClInclude>
+    <ClInclude Include="HeightMap.h">
+      <Filter>Component\Renderer\Child</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingParameter.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="MainCore">
@@ -326,6 +338,9 @@
       <Filter>Shader</Filter>
     </FxCompile>
     <FxCompile Include="..\..\data\shader\OutLine.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\data\shader\ShaderData.hlsl">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>

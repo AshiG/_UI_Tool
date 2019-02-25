@@ -1,6 +1,5 @@
 #include "JImageCtrl.h"
 #include "DxManager.h"
-
 namespace UI
 {
 	bool JImageCtrl::Create(ID3D11Device* pDevice,const char* psName, const TCHAR* psShaderName)
@@ -13,28 +12,31 @@ namespace UI
 		int iIndex = UI::I_TexMgr.Add(pDevice, txName);
 		if (iIndex < 0) return false;
 		m_pIndexList.push_back(iIndex);
+		m_pTexture = I_TexMgr.GetPtr(m_pIndexList[txNORMAL]);
 		return true;
 	}
 	void JImageCtrl::Update()
 	{
+#ifdef _DEBUG
 		m_pTexture = I_TexMgr.GetPtr(m_pIndexList[txNORMAL]);
-		if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		{
-			if (EventHover.first != nullptr && m_bEvent)
-				EventHover.first(EventHover.second);
-		}
-		if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
-			Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
-		{
-			if (EventPress.first != nullptr && m_bEvent)
-				EventPress.first(EventPress.second);
-		}
-		if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
-			Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
-		{
-			if (EventClick.first != nullptr && m_bEvent)
-				EventClick.first(EventClick.second);
-		}
+#endif
+		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
+		//{
+		//	if (EventHover.first != nullptr && m_bEvent)
+		//		EventHover.first(EventHover.second);
+		//}
+		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
+		//	Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
+		//{
+		//	if (EventPress.first != nullptr && m_bEvent)
+		//		EventPress.first(EventPress.second);
+		//}
+		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
+		//	Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
+		//{
+		//	if (EventClick.first != nullptr && m_bEvent)
+		//		EventClick.first(EventClick.second);
+		//}
 	}
 	bool JImageCtrl::Frame(const float& spf, const float& accTime) noexcept
 	{

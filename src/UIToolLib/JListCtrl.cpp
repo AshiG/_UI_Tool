@@ -36,24 +36,26 @@ namespace UI
 	}
 	void JListCtrl::Update()
 	{
+#ifdef _DEBUG
 		m_pTexture = I_TexMgr.GetPtr(m_pIndexList[txNORMAL]);
-		if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		{
-			if (EventHover.first != nullptr && m_bEvent)
-				EventHover.first(EventHover.second);
-		}
-		if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
-			Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
-		{
-			if (EventPress.first != nullptr && m_bEvent)
-				EventPress.first(EventPress.second);
-		}
-		if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
-			Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
-		{
-			if (EventClick.first != nullptr && m_bEvent)
-				EventClick.first(EventClick.second);
-		}
+#endif
+		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
+		//{
+		//	if (EventHover.first != nullptr && m_bEvent)
+		//		EventHover.first(EventHover.second);
+		//}
+		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
+		//	Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
+		//{
+		//	if (EventPress.first != nullptr && m_bEvent)
+		//		EventPress.first(EventPress.second);
+		//}
+		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
+		//	Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
+		//{
+		//	if (EventClick.first != nullptr && m_bEvent)
+		//		EventClick.first(EventClick.second);
+		//}
 		RECT rt = Window::getClientRect();
 		float width = ((rt.right / 2.0f) / (m_fWidth / 2.0f));
 		float height = ((rt.bottom / 2.0f) / (m_fHeight / 2.0f));
@@ -113,7 +115,7 @@ namespace UI
 		// slider value에 따라서 string iterator 이동 value = 0 ~ 1
 		while (fCurValue < *m_fValue)
 		{
-			if (fDivisionValue < 0.0f) break;
+			if (fDivisionValue <= 0.0f) break;
 			iter++;
 			fCurValue += fDivisionValue;
 		}

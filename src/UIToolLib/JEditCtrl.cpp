@@ -42,27 +42,34 @@ namespace UI
 	}
 	void JEditCtrl::Update()
 	{
+		#ifdef _DEBUG
 		m_pTexture = I_TexMgr.GetPtr(m_pIndexList[txNORMAL]);
+		#endif
+
 		if (Input::Get().GetKeyState(EMouseButton::Left) == EKeyState::DOWN)
 		{
 			this->End();
 		}
 
-		if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		{
-			if (EventHover.first != nullptr && m_bEvent)
-				EventHover.first(EventHover.second);
-		}
-		if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()))
+		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
+		//{
+		//	if (EventHover.first != nullptr && m_bEvent)
+		//		EventHover.first(EventHover.second);
+		//}
+		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()))
+		//{
+		//	this->Play();
+		//	if (EventPress.first != nullptr && m_bEvent)
+		//		EventPress.first(EventPress.second);
+		//}
+		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()))
+		//{
+		//	if (EventClick.first != nullptr && m_bEvent)
+		//		EventClick.first(EventClick.second);
+		//}
+		if (CheckPressed())
 		{
 			this->Play();
-			if (EventPress.first != nullptr && m_bEvent)
-				EventPress.first(EventPress.second);
-		}
-		if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()))
-		{
-			if (EventClick.first != nullptr && m_bEvent)
-				EventClick.first(EventClick.second);	
 		}
 		/* 버튼 rect 안에서 write 출력 */
 		RECT rt = Window::getClientRect();

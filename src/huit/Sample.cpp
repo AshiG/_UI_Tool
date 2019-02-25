@@ -252,7 +252,7 @@ void Sample::InGameEvent()
 
 	JSliderCtrl* pChatSlider = (JSliderCtrl*)pRoot->find_child(L"Chat_Slider");
 	JListCtrl* pList = (JListCtrl*)pRoot->find_child(L"Chat_Log");
-	pList->m_fValue = &pChatSlider->m_fValue;
+	pList->m_fValue = pChatSlider->m_fValue;
 
 	// effect
 	JPanel* pEff1 = (JPanel*)pRoot->find_child(L"fadeout");
@@ -349,6 +349,11 @@ void Sample::InGameEvent()
 	static JPanel* Armor = (JPanel*)pRoot->find_child(L"Inventory_Armor_Back");
 	static JPanel* Accessoris = (JPanel*)pRoot->find_child(L"Inventory_Accessories_Back");
 	static JPanel* Accessoris2 = (JPanel*)pRoot->find_child(L"Inventory_Accessories2_Back");
+	static JTextCtrl* ItemInfoName = (JTextCtrl*)pRoot->find_child(L"Item_Info_Name_txt");
+	static JTextCtrl* ItemInfoEffect = (JTextCtrl*)pRoot->find_child(L"Item_Info_Effect_txt");
+	static JTextCtrl* ItemInfoRating = (JTextCtrl*)pRoot->find_child(L"Item_Info_Rating_txt");
+	static JTextCtrl* ItemInfoKind = (JTextCtrl*)pRoot->find_child(L"Item_Info_Kind_txt");
+	static JTextCtrl* ItemInfoReinforce = (JTextCtrl*)pRoot->find_child(L"Item_Info_Reinforce_txt");
 	if (Weapon == nullptr) return;
 	if (Armor == nullptr) return;
 	if (Accessoris == nullptr) return;
@@ -359,18 +364,86 @@ void Sample::InGameEvent()
 		pItemHelp->m_bRender = false;
 		if (!pInventoryPanel->m_bRender) return;
 
-		if (Weapon->m_pShape->Hovered(Weapon->m_rt, Weapon->m_ptMouse.Getpt()) ||
-			Armor->m_pShape->Hovered(Armor->m_rt, Armor->m_ptMouse.Getpt()) ||
-			Accessoris->m_pShape->Hovered(Accessoris->m_rt, Accessoris->m_ptMouse.Getpt()) ||
-			Accessoris2->m_pShape->Hovered(Accessoris2->m_rt, Accessoris2->m_ptMouse.Getpt()))
+		if (Weapon->CheckHovered())
 		{
+			ItemInfoKind->SetString(L"초보자의 검");
+			ItemInfoRating->SetString(L"무기");
 			pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
 			pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
 			pItemHelp->m_bRender = true;
 		}
+		if (Armor->CheckHovered())
+		{
+			ItemInfoKind->SetString(L"초보자의 갑옷");
+			ItemInfoRating->SetString(L"방어구");
+			pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+			pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+			pItemHelp->m_bRender = true;
+		}
+		if (Accessoris->CheckHovered())
+		{
+			ItemInfoKind->SetString(L"초보자의 목걸이");
+			ItemInfoRating->SetString(L"악세사리");
+			pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+			pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+			pItemHelp->m_bRender = true;
+		}
+		if (Accessoris2->CheckHovered())
+		{
+			ItemInfoKind->SetString(L"초보자의 팔찌");
+			ItemInfoRating->SetString(L"악세사리");
+			pItemHelp->m_vPos.x = pItemHelp->m_ptMouse.Getpt().x - pItemHelpBack->m_vScl.x;
+			pItemHelp->m_vPos.y = pItemHelp->m_ptMouse.Getpt().y - pItemHelpBack->m_vScl.y;
+			pItemHelp->m_bRender = true;
+		}		
 	};
 	pItemHelp->PreEvent.first = E_SHOW_ITEM_INFO;
 	pItemHelp->PreEvent.second = pItemHelp;
+}
+void Sample::LoadingEvent()
+{
+	JPanel* pLoadingText = pRoot->find_child(L"Loading_Text");
+	if (pLoadingText == nullptr) return;
+	auto E_LodingText = [](void* vp)
+	{
+		JTextCtrl* pText = (JTextCtrl*)vp;
+
+		pText->m_fUITimer += Timer::SPF;
+
+		if (pText->m_fUITimer >= 0.3f && pText->m_fUITimer <= 0.6f)
+		{
+			pText->SetString(L"Loading");
+		}
+		else if (pText->m_fUITimer >= 0.6f && pText->m_fUITimer <= 0.9f)
+		{
+			pText->SetString(L"Loading.");
+		}
+		else if (pText->m_fUITimer >= 0.9f && pText->m_fUITimer <= 1.2f)
+		{
+			pText->SetString(L"Loading..");
+		}
+		else if (pText->m_fUITimer >= 1.2f && pText->m_fUITimer <= 1.5f)
+		{
+			pText->SetString(L"Loading...");
+		}
+		else
+		{
+			pText->m_fUITimer = 0.0f;
+		}
+	};
+	pLoadingText->PreEvent.first = E_LodingText;
+	pLoadingText->PreEvent.second = pLoadingText;
+
+	static JPanel* pLoadingSprite = pRoot->find_child(L"Loading_Sprite");
+	JPanel* pLoadingProgress = pRoot->find_child(L"Loading_Progress");
+	if (pLoadingProgress == nullptr) return;
+	auto E_Loading_Sprite = [](void* vp)
+	{
+		JProgressBar* pProg = (JProgressBar*)vp;
+		pLoadingSprite->m_vPos.x = ((pProg->m_fCurValue * (pProg->m_vScl.x * 2.0f)) - pProg->m_vScl.x) + pProg->m_vPos.x;
+	};
+	pLoadingProgress->PreEvent.first = E_Loading_Sprite;
+	pLoadingProgress->PreEvent.second = pLoadingProgress;
 }
 void Sample::EventCircuit(JPanel* pPanel, bool bValue)
 {
@@ -1418,7 +1491,7 @@ void Sample::UpdateInfo()
 		InfoForm::Get()->SetDlgItemTextW(Info_txNORMAL, I_TexMgr.GetPtr(pslider->m_pSliderBar->m_pIndexList[UI::txNORMAL])->m_szName.data());
 		InfoForm::Get()->SetDlgItemTextW(Info_txHOVER, I_TexMgr.GetPtr (pslider->m_pSliderHandle->m_pIndexList[UI::txNORMAL])->m_szName.data());
 		InfoForm::Get()->SetDlgItemTextW(Info_txPRESS, L"");
-		InfoForm::Get()->SetDlgItemTextW(Info_Value, std::to_wstring(pslider->m_fValue).data());
+		InfoForm::Get()->SetDlgItemTextW(Info_Value, std::to_wstring(*pslider->m_fValue).data());
 		InfoForm::Get()->m_VHType.SetCurSel(InfoForm::Get()->m_VHType.FindString(0, FindVHType(pslider->m_VHType).data()));
 		InfoForm::Get()->SetDlgItemTextW(ColorX, std::to_wstring(pslider->m_pSliderBar->m_pShape->m_cbData.vColor.x).data());
 		InfoForm::Get()->SetDlgItemTextW(ColorY, std::to_wstring(pslider->m_pSliderBar->m_pShape->m_cbData.vColor.y).data());

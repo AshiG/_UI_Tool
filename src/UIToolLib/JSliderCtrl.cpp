@@ -32,20 +32,21 @@ namespace UI
 	}
 	const float* JSliderCtrl::GetValue()
 	{
-		return &m_fValue;
+		return m_fValue;
 	}
-	void JSliderCtrl::SetValue(float fValue)
+	void JSliderCtrl::SetValue(float& fValue)
 	{
-		m_fValue = fValue;
+		m_fValue = &fValue;
 	}
 	void JSliderCtrl::Update()
 	{
-		m_pSliderBar->m_pTexture = I_TexMgr.GetPtr(m_pSliderBar->m_pIndexList[txNORMAL]);
+#ifdef _DEBUG
+		m_pSliderBar->m_pTexture    = I_TexMgr.GetPtr(m_pSliderBar->m_pIndexList[txNORMAL]);
 		m_pSliderHandle->m_pTexture = I_TexMgr.GetPtr(m_pSliderHandle->m_pIndexList[txNORMAL]);
+#endif
 		if (m_VHType == Vertical)
 		{
 			m_pSliderHandle->m_vPos.x = m_pSliderBar->m_vPos.x;
-			m_pSliderHandle->m_vPos.y = ((m_fValue * (m_pSliderBar->m_vScl.y * 2.0f)) - m_pSliderBar->m_vScl.y) + m_pSliderBar->m_vPos.y;
 			if (m_bClick)
 			{
 				m_pSliderHandle->m_vPos.y = (float)m_pSliderHandle->m_ptMouse.Getpt().y;
@@ -58,21 +59,16 @@ namespace UI
 				{
 					m_pSliderHandle->m_vPos.y = m_pSliderBar->m_vPos.y + m_pSliderBar->m_vScl.y;
 				}
-				m_fValue = ((m_pSliderHandle->m_vPos.y - m_pSliderBar->m_vPos.y) / m_pSliderBar->m_vScl.y) * 0.5f + 0.5f;
+				*m_fValue = ((m_pSliderHandle->m_vPos.y - m_pSliderBar->m_vPos.y) / m_pSliderBar->m_vScl.y) * 0.5f + 0.5f;
 			}
-			/* 기준 = Bar */
-			m_pSliderBar->m_vScl = this->m_vScl;
-			m_pSliderBar->m_vPos = this->m_vPos;
-			m_pSliderBar->m_vRot = this->m_vRot;
-			/* SliderHandle Scl = SliderBar Scl.y * 2.0f */
-			//m_pSliderHandle->m_vScl.x = m_pSliderBar->m_vScl.x * 4.0f;
-			//m_pSliderHandle->m_vScl.y = m_pSliderBar->m_vScl.x * 4.0f;
-			m_pSliderHandle->m_vRot = m_pSliderBar->m_vRot;
+			else
+			{
+				m_pSliderHandle->m_vPos.y = ((*m_fValue * (m_pSliderBar->m_vScl.y * 2.0f)) - m_pSliderBar->m_vScl.y) + m_pSliderBar->m_vPos.y;
+			}
 		}
 		else if (m_VHType == Horizontal)
 		{
 			m_pSliderHandle->m_vPos.y = m_pSliderBar->m_vPos.y;
-			m_pSliderHandle->m_vPos.x = ((m_fValue * (m_pSliderBar->m_vScl.x * 2.0f)) - m_pSliderBar->m_vScl.x) + m_pSliderBar->m_vPos.x;
 			if (m_bClick)
 			{
 				m_pSliderHandle->m_vPos.x = (float)m_pSliderHandle->m_ptMouse.Getpt().x;
@@ -85,15 +81,18 @@ namespace UI
 				{
 					m_pSliderHandle->m_vPos.x = m_pSliderBar->m_vPos.x + m_pSliderBar->m_vScl.x;
 				}
-				m_fValue = ((m_pSliderHandle->m_vPos.x - m_pSliderBar->m_vPos.x) / m_pSliderBar->m_vScl.x) * 0.5f + 0.5f;
+				*m_fValue = ((m_pSliderHandle->m_vPos.x - m_pSliderBar->m_vPos.x) / m_pSliderBar->m_vScl.x) * 0.5f + 0.5f;
 			}
-			/* 기준 = Bar */
-			m_pSliderBar->m_vScl = this->m_vScl;
-			m_pSliderBar->m_vPos = this->m_vPos;
-			m_pSliderBar->m_vRot = this->m_vRot;
-			/* SliderHandle Scl = SliderBar Scl.y * 2.0f */
-			m_pSliderHandle->m_vRot = m_pSliderBar->m_vRot;
+			else
+			{
+				m_pSliderHandle->m_vPos.x = ((*m_fValue * (m_pSliderBar->m_vScl.x * 2.0f)) - m_pSliderBar->m_vScl.x) + m_pSliderBar->m_vPos.x;
+			}
 		}
+
+		/* 기준 = Bar */
+		m_pSliderBar->m_vScl = this->m_vScl;
+		m_pSliderBar->m_vPos = this->m_vPos;
+		m_pSliderBar->m_vRot = this->m_vRot;
 
 		if (Input::GetKeyState(EMouseButton::Left) == EKeyState::DOWN)
 		{
