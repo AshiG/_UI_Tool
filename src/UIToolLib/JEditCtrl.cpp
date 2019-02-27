@@ -50,23 +50,6 @@ namespace UI
 		{
 			this->End();
 		}
-
-		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		//{
-		//	if (EventHover.first != nullptr && m_bEvent)
-		//		EventHover.first(EventHover.second);
-		//}
-		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()))
-		//{
-		//	this->Play();
-		//	if (EventPress.first != nullptr && m_bEvent)
-		//		EventPress.first(EventPress.second);
-		//}
-		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()))
-		//{
-		//	if (EventClick.first != nullptr && m_bEvent)
-		//		EventClick.first(EventClick.second);
-		//}
 		if (CheckPressed())
 		{
 			this->Play();
@@ -84,15 +67,6 @@ namespace UI
 		if (m_bFocus)
 		{
 			m_Text = ime::Get()->GetString();
-			//if (ime::Get()->GetString() == L"")
-			//	ime::Get()->SetString(m_Text);
-			//else if (m_Text.size() == 0)
-			//{
-			//	if (Input::Get().GetKeyState(VK_BACK) == EKeyState::DOWN)
-			//	{
-			//		ime::Get()->SetString(L"");
-			//	}
-			//}
 			/* MaxLength */
 			if (m_Text.size() == m_iMaxLength)
 				ime::Get()->SetString(m_Text);
@@ -143,9 +117,6 @@ namespace UI
 	}
 	bool JEditCtrl::Release()noexcept
 	{
-		//m_pText.clear();
-		//m_pTextrt.clear();
-		//SAFE_DELETE(m_fValue);
 		JImageCtrl::Release();
 		return true;
 	}

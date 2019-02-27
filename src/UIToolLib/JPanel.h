@@ -36,8 +36,6 @@ namespace UI
 		EVENT_SHOW_SCL,
 		EVENT_NOTSHOW_SCL,
 	};
-	/* JPanel 개념 */
-	/* 하나의 이벤트에 실행되는 UI 또는 한번에 보여주는 UI 단위 */
 	class JPanel : public JTransform, public GameObject
 	{
 	public:
@@ -51,9 +49,9 @@ namespace UI
 		EVENT_LIST m_pfPress = EVENT_NONE;
 		EVENT_LIST m_pfClick = EVENT_NONE;
 		/* 보이드포인터 이름 */
-		wstring m_vpHover;	   // Panel NodeName
-		wstring m_vpPress;	   // Panel NodeName
-		wstring m_vpClick;	   // Panel NodeName
+		wstring m_vpHover;	   
+		wstring m_vpPress;	   
+		wstring m_vpClick;	   
 		/* 실행되는 Event */
 		std::pair<void(*)(void*), void*> EventHover;
 		std::pair<void(*)(void*), void*> EventPress;
@@ -65,13 +63,13 @@ namespace UI
 		int m_pKeyHold = VK_F24;
 		int m_pKeyDown = VK_F24;
 	public:
-		bool				m_bRender = true; // Render 여부 확인
-		JPanel*				m_pParent = nullptr;
-		JPanel*				m_pRoot = nullptr;
+		bool				m_bRender		= true; // Render 여부 확인
+		JPanel*				m_pParent		= nullptr;
+		JPanel*				m_pRoot			= nullptr;
 		wstring				m_ParentName;
 		wstring				m_NodeName;
 		std::list<JPanel*>	m_pChildList;
-		bool				m_bEffect = false;
+		bool				m_bEffect		= false;
 	public:
 		JPlane*				m_pShape;
 		JTexture*			m_pTexture;
@@ -81,7 +79,7 @@ namespace UI
 		D3DXMATRIX			m_matView;
 		D3DXMATRIX			m_matProj;
 		RECT				m_rt;      // plane rect
-		JMouse				m_ptMouse; // 중앙이 0,0인 POINT
+		JMouse				m_ptMouse; // 중앙이 0,0인 Mouse Point
 		float				m_fWidth;  // 화면 크기 설정 -> matproj
 		float				m_fHeight; // 화면 크기 설정 -> matproj
 		float				m_fUITimer;
@@ -107,10 +105,11 @@ namespace UI
 		void SetEventTime(const float fTime);
 		float GetEventTime();
 		void EffectPlay();
+	public:
 		bool Init() noexcept override;
 		bool PreFrame(const float& spf, const float& accTime);
-		bool PostFrame(const float& spf, const float& accTime);
 		bool Frame(const float& spf, const float& accTime) noexcept override;
+		bool PostFrame(const float& spf, const float& accTime);
 		bool Render(ID3D11DeviceContext* pContext) noexcept override;
 		bool Release() noexcept override;
 	public:

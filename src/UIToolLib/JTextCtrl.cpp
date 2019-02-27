@@ -27,15 +27,10 @@ namespace UI
 	}
 	void JTextCtrl::Update()
 	{
-		/* 버튼 rect 안에서 write 출력 */
+		/* 버튼 rect 안에서 text 출력 */
 		RECT rt = Window::getClientRect();
 		float width = ((rt.right / 2.0f) / (m_fWidth / 2.0f));
 		float height = ((rt.bottom / 2.0f) / (m_fHeight / 2.0f));
-
-		//m_rtText.x = (m_vPos.x * width) - m_vScl.x + (rt.right / 2.0f);
-		//m_rtText.y = (-m_vPos.y * height) - m_vScl.y + (rt.bottom / 2.0f);
-		//m_rtText.z = (m_vPos.x * width) + m_vScl.x + (rt.right / 2.0f);
-		//m_rtText.w = (-m_vPos.y * height) + m_vScl.y + (rt.bottom / 2.0f);
 
 		D3DXVECTOR2 vPos;
 		vPos.x = m_vPos.x + m_pParent->m_vPos.x;

@@ -160,6 +160,7 @@ namespace UI
 		m_ptMouse.Update(m_fWidth, m_fHeight);
 		if (PreEvent.first != nullptr && m_bEvent)
 			PreEvent.first(PreEvent.second);
+
 		if (!m_bRender) return false;
 		GameObject::Frame(spf, accTime);
 		Update();

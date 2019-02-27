@@ -16,7 +16,7 @@ namespace UI
 		/* ====================  Texture Setting ====================*/
 		for (int iList = 0; iList < FileList.size(); iList++)
 		{
-			// Texture index를 배열로 가지고있는다리
+			// Texture index를 배열로 가지고있음
 			INT iIndex = I_TexMgr.Add(pDevice, FileList[iList].c_str());
 			if (iIndex < 0)	return false;
 			if (!SetTexture(pDevice, FileList[iList].c_str()))
@@ -134,23 +134,6 @@ namespace UI
 			m_pShape->m_pVertices[2].t = D3DXVECTOR2(rt.x, rt.z); 
 			m_pShape->m_pVertices[3].t = D3DXVECTOR2(rt.y, rt.z); 
 		}
-		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		//{
-		//	if (EventHover.first != nullptr && m_bEvent)
-		//		EventHover.first(EventHover.second);
-		//}
-		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
-		//	Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
-		//{
-		//	if (EventPress.first != nullptr && m_bEvent)
-		//		EventPress.first(EventPress.second);
-		//}
-		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
-		//	Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
-		//{
-		//	if (EventClick.first != nullptr && m_bEvent)
-		//		EventClick.first(EventClick.second);
-		//}
 	}
 	bool JSpriteCtrl::Frame(const float& spf, const float& accTime)noexcept
 	{

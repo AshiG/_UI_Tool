@@ -27,24 +27,6 @@ namespace UI
 	}
 	void JCheckCtrl::Update()
 	{
-		//if (m_pShape->Hovered(m_rt, m_ptMouse.Getpt()))
-		//{
-		//	if (EventHover.first != nullptr && m_bEvent)
-		//		EventHover.first(EventHover.second);
-		//}
-		//if (m_pShape->Pressed(m_rt, m_ptMouse.Getpt()) ||
-		//	Input::Get().GetKeyState(m_pKeyHold) == EKeyState::HOLD)
-		//{
-		//	if (EventPress.first != nullptr && m_bEvent)
-		//		EventPress.first(EventPress.second);
-		//}
-		//if (m_pShape->Clicked(m_rt, m_ptMouse.Getpt()) ||
-		//	Input::Get().GetKeyState(m_pKeyDown) == EKeyState::UP)
-		//{
-		//	if (EventClick.first != nullptr && m_bEvent)
-		//		EventClick.first(EventClick.second);
-		//	m_bCheck = !m_bCheck;
-		//}
 		if (CheckClicked())
 		{
 			m_bCheck = !m_bCheck;

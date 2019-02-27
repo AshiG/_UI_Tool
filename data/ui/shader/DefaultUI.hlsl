@@ -42,10 +42,10 @@ float4 PS(VS_OUTPUT vIn) : SV_Target
 {
 	float4 txColor = g_txNormal.Sample(samLinear, vIn.t);
 	return txColor * vIn.c;
-	return (txColor * (1.0f - txColor.a) + vIn.c * txColor.a);
-	return (vIn.c * (1.0f - vIn.c.a) + txColor * vIn.c.a) *vIn.c;
+	//return (txColor * (1.0f - txColor.a) + vIn.c * txColor.a);
+	//return (vIn.c * (1.0f - vIn.c.a) + txColor * vIn.c.a) *vIn.c;
 	//return vIn.c * (1.0f - txColor.a) + txColor * vIn.c.a;
-	return vIn.c * (1.0f - txColor.a) + txColor * txColor.a;
+	//return vIn.c * (1.0f - txColor.a) + txColor * txColor.a;
 	//return vIn.c * (vColor * vIn.c.a);
 }
 float4 PS_PARTICLE(VS_OUTPUT vIn) : SV_Target
